@@ -3,141 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Community Watch | Taman Tambun Perdana 1</title>
+    <title>Community Watch Crime Reporting System</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
-    <div id="login-overlay" class="overlay">
-        <div class="login-card">
-            <div class="login-header">
-                <i class="fas fa-shield-halved fa-3x"></i>
-                <h2>Community Watch</h2>
-                <p>Taman Tambun Perdana 1, Melaka</p>
-            </div>
-            <form id="loginForm">
-                <div class="input-group">
-                    <label>Login As</label>
-                    <select id="loginRole" required>
-                        <option value="citizen">Citizen</option>
-                        <option value="authority">Authority</option>
-                        <option value="admin">System Admin</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <input type="email" id="email" placeholder="Email Address" required>
-                </div>
-                <div class="input-group">
-                    <input type="password" id="password" placeholder="Password" required>
-                </div>
-                <button type="submit" class="btn-primary">Sign In</button>
-            </form>
+    <header>
+        <div class="container">
+            <h1>Community Watch Crime Reporting System</h1>
+            <p class="tagline">Taman Tambun Perdana 1, Durian Tunggal, Melaka</p>
         </div>
-    </div>
+    </header>
 
-    <div id="dashboard-container" class="hidden">
-        <aside class="sidebar">
-            <div class="sidebar-header">
-                <h3>CW System</h3>
-            </div>
-            <nav>
-                <ul id="nav-menu">
+    <main class="container">
+        <section class="hero">
+            <h2>Welcome to Community Watch</h2>
+            <p>A comprehensive crime reporting and management system for our community.</p>
+        </section>
+
+        <section class="features">
+            <h2>System Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Citizen Portal</h3>
+                    <ul>
+                        <li>Report crimes and incidents</li>
+                        <li>Track report status</li>
+                        <li>View incident hotspot map</li>
+                        <li>Manage personal profile</li>
+                        <li>Upload evidence (photos/videos)</li>
                     </ul>
-            </nav>
-            <div class="sidebar-footer">
-                <button onclick="logout()" class="btn-logout"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                </div>
+
+                <div class="feature-card">
+                    <h3>Authority Portal (Ajk Kampung)</h3>
+                    <ul>
+                        <li>Manage incident reports</li>
+                        <li>Take action on reports</li>
+                        <li>Update report status</li>
+                        <li>View analytics dashboard</li>
+                        <li>Manage profile</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h3>Admin Portal</h3>
+                    <ul>
+                        <li>Manage authority accounts</li>
+                        <li>Add/edit/delete authorities</li>
+                        <li>Delete suspicious reports</li>
+                        <li>View system analytics</li>
+                        <li>Monitor all activities</li>
+                    </ul>
+                </div>
             </div>
-        </aside>
+        </section>
 
-        <main class="content">
-            <header class="top-bar">
-                <h2 id="page-title">Dashboard</h2>
-                <div class="user-profile">
-                    <span id="user-role-badge" class="badge">Role</span>
-                    <strong id="user-display-name">User Name</strong>
+        <section class="tech-stack">
+            <h2>Technology Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <h4>Frontend</h4>
+                    <p>React 18.3.1 + TypeScript</p>
+                    <p>Tailwind CSS v4</p>
+                    <p>React Router v7</p>
+                    <p>Recharts</p>
                 </div>
-            </header>
+                <div class="tech-item">
+                    <h4>Backend</h4>
+                    <p>PostgreSQL Database</p>
+                    <p>RESTful API</p>
+                    <p>JWT Authentication</p>
+                </div>
+                <div class="tech-item">
+                    <h4>Security</h4>
+                    <p>Strong password validation</p>
+                    <p>Role-based access control</p>
+                    <p>IC number validation</p>
+                    <p>Phone number validation</p>
+                </div>
+            </div>
+        </section>
 
-            <section id="sec-hotspot" class="page-section">
-                <div class="card">
-                    <h3><i class="fas fa-map-marker-alt"></i> Incident Hotspots</h3>
-                    <p>Current high-alert areas in Taman Tambun Perdana 1.</p>
-                    <div class="map-placeholder">
-                        <div class="hotspot-item high">Jalan Perdana 1/2 - High Alert</div>
-                        <div class="hotspot-item med">Jalan Perdana 1/5 - Caution</div>
+        <section class="setup">
+            <h2>Database Setup</h2>
+            <div class="setup-instructions">
+                <h3>Prerequisites</h3>
+                <ul>
+                    <li>PostgreSQL 12 or higher</li>
+                    <li>Node.js 18 or higher</li>
+                    <li>pnpm package manager</li>
+                </ul>
+
+                <h3>Installation Steps</h3>
+                <ol>
+                    <li>Clone the repository</li>
+                    <li>Install dependencies: <code>pnpm install</code></li>
+                    <li>Create PostgreSQL database: <code>createdb community_watch_db</code></li>
+                    <li>Run schema: <code>psql -d community_watch_db -f database/schema.sql</code></li>
+                    <li>Start development server: <code>pnpm dev</code></li>
+                </ol>
+
+                <h3>Default Login Credentials</h3>
+                <div class="credentials">
+                    <div class="credential-card">
+                        <h4>Citizen Account</h4>
+                        <p>Email: jane@example.com</p>
+                        <p>Password: Password123!</p>
+                    </div>
+                    <div class="credential-card">
+                        <h4>Authority (Ajk Kampung)</h4>
+                        <p>Email: ahmad@authority.gov</p>
+                        <p>Password: Admin123!</p>
+                    </div>
+                    <div class="credential-card">
+                        <h4>Admin Account</h4>
+                        <p>Email: admin@authority.gov</p>
+                        <p>Password: Admin123!</p>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section id="sec-report" class="page-section hidden">
-                <div class="card">
-                    <h3>Submit New Incident</h3>
-                    <form id="incidentForm">
-                        <div class="row">
-                            <div class="col">
-                                <label>Report Type</label>
-                                <select id="report_type">
-                                    <option value="Crime">Report Crime/Incident</option>
-                                    <option value="Watch">Watch My House (Vacation)</option>
-                                </select>
-                            </div>
-                            <div class="col">
-                                <label>Category</label>
-                                <select id="category" onchange="checkOtherCategory(this)">
-                                    <option value="Theft">Theft</option>
-                                    <option value="Vandalism">Vandalism</option>
-                                    <option value="Other">Other (Please Specify)</option>
-                                </select>
-                                <input type="text" id="other_cat_name" placeholder="Name your incident" class="hidden">
-                            </div>
-                        </div>
-                        <label>Location (Tambun Perdana 1 Only)</label>
-                        <input type="text" placeholder="e.g. No 12, Jalan Perdana 1/4" required>
-                        
-                        <label>Evidence (Image/Video)</label>
-                        <input type="file" accept="image/*,video/*" required>
-                        
-                        <button type="submit" class="btn-success">Submit Official Report</button>
-                    </form>
-                </div>
-            </section>
+        <section class="database">
+            <h2>Database Schema</h2>
+            <p>The system uses 7 main database tables:</p>
+            <ul>
+                <li><strong>CITIZEN</strong> - Stores community member information</li>
+                <li><strong>STAFF</strong> - Stores authority and admin accounts</li>
+                <li><strong>INCIDENT_TYPE</strong> - Predefined incident categories</li>
+                <li><strong>REPORT</strong> - Crime and incident reports</li>
+                <li><strong>REPORT_MEDIA</strong> - Media evidence (photos/videos)</li>
+                <li><strong>AUTHORITY_ACTION</strong> - Actions taken by authorities</li>
+                <li><strong>REPORT_RESOLUTION</strong> - Final resolution status</li>
+            </ul>
+            <p>See <code>schema.sql</code> for complete database structure.</p>
+        </section>
 
-            <section id="sec-admin" class="page-section hidden">
-                <div class="card">
-                    <h3>Authority Management</h3>
-                    <div class="admin-controls">
-                        <input type="text" id="newAuthName" placeholder="Full Name">
-                        <input type="text" id="newAuthPos" placeholder="Position (e.g. Police)">
-                        <button onclick="addAuthority()" class="btn-small">Add Staff</button>
-                    </div>
-                    <table class="styled-table">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Position</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody id="auth-list"></tbody>
-                    </table>
-                </div>
-            </section>
+        <section class="validation">
+            <h2>Validation Rules</h2>
+            <div class="validation-rules">
+                <h3>Password Requirements</h3>
+                <ul>
+                    <li>Minimum 8 characters</li>
+                    <li>At least one uppercase letter</li>
+                    <li>At least one lowercase letter</li>
+                    <li>At least one number</li>
+                    <li>At least one special character (!@#$%^&*)</li>
+                </ul>
 
-            <section id="sec-profile" class="page-section hidden">
-                <div class="card">
-                    <h3>Account Settings</h3>
-                    <form id="profileForm">
-                        <label>IC Number</label>
-                        <input type="text" placeholder="xxxxxx-xx-xxxx" pattern="^[0-9]{6}-[0-9]{2}-[0-9]{4}$" required>
-                        <label>Phone Number</label>
-                        <input type="text" placeholder="01x-xxxxxxx" pattern="^01[0-9]-[0-9]{7,8}$" required>
-                        <button class="btn-primary">Save Changes</button>
-                    </form>
-                </div>
-            </section>
-        </main>
-    </div>
+                <h3>IC Number Format</h3>
+                <p>Malaysian IC format: <code>YYMMDD-PB-####</code></p>
+                <p>Example: <code>920101-14-5678</code></p>
+
+                <h3>Phone Number Format</h3>
+                <p>Malaysian mobile format: <code>01XXXXXXXXX</code></p>
+                <p>Example: <code>0123456789</code> (10-11 digits)</p>
+            </div>
+        </section>
+
+        <section class="incident-types">
+            <h2>Incident Types</h2>
+            <ul>
+                <li>Theft - Property theft or burglary</li>
+                <li>Vandalism - Property damage or graffiti</li>
+                <li>Suspicious Activity - Unusual or concerning behavior</li>
+                <li>Assault - Physical violence or threat</li>
+                <li>Burglary - Breaking and entering</li>
+                <li>Drug Activity - Suspected drug-related incidents</li>
+                <li>Others - Custom incident type</li>
+            </ul>
+        </section>
+
+        <section class="contact">
+            <h2>Support</h2>
+            <p>For technical support or questions, please contact your local Ajk Kampung.</p>
+            <p><strong>Coverage Area:</strong> Taman Tambun Perdana 1, Durian Tunggal, Melaka</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Community Watch Crime Reporting System. All rights reserved.</p>
+            <p>Serving Taman Tambun Perdana 1, Durian Tunggal, Melaka</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
