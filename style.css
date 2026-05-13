@@ -1,90 +1,116 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #f4f4f4;
+:root {
+    --bg-dark: #1a1c23;
+    --sidebar-bg: #24262d;
+    --primary-blue: #3b82f6;
+    --accent-green: #10b981;
+    --danger-red: #ef4444;
+    --text-main: #d1d5db;
+    --card-bg: #ffffff;
 }
 
-header {
-    background-color: #333;
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    background-color: #f3f4f6;
+    color: #111827;
+}
+
+/* Login Styles */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.login-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* Dashboard Layout */
+#dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 260px;
+    background: var(--sidebar-bg);
     color: white;
-    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header { padding: 20px; font-size: 1.5rem; border-bottom: 1px solid #3f414a; }
+
+.sidebar nav ul { list-style: none; padding: 20px 0; }
+
+.sidebar nav ul li a {
+    display: block;
+    padding: 12px 25px;
+    color: var(--text-main);
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.sidebar nav ul li a:hover { background: #3f414a; color: white; }
+
+.content { flex: 1; padding: 2rem; overflow-y: auto; }
+
+.top-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e5e7eb;
 }
 
-nav {
-    background: #444;
-    padding: 0.5rem;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-main {
-    padding: 20px;
-    max-width: 800px;
-    margin: auto;
-}
-
-.form-container, section {
+/* UI Elements */
+.card {
     background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
 }
 
-input, textarea, select, button {
+.hidden { display: none !important; }
+
+.btn-primary { background: var(--primary-blue); color: white; border: none; padding: 12px; border-radius: 6px; cursor: pointer; width: 100%; font-weight: 600; }
+
+.btn-success { background: var(--accent-green); color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; }
+
+input, select {
     width: 100%;
     padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+    margin: 8px 0 16px 0;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
 }
 
-button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-button:hover {
-    background-color: #218838;
-}
-
-table {
+.styled-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
-th, td {
-    padding: 12px;
-    border: 1px solid #ddd;
-    text-align: left;
-}
+.styled-table th { background: #f9fafb; text-align: left; padding: 12px; }
+.styled-table td { padding: 12px; border-top: 1px solid #f3f4f6; }
 
-th {
-    background-color: #f8f9fa;
-}
-
-.card {
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 5px;
+.badge {
+    background: #dbeafe;
+    color: #1e40af;
+    padding: 4px 12px;
+    border-radius: 99px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
 }
