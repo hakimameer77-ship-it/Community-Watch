@@ -15,7 +15,7 @@
     </header>
 
     <main class="container">
-        <section class="hero">
+        <section class="hero fade-in">
             <h2>Welcome to Community Watch</h2>
             <p>A comprehensive crime reporting and management system for our community.</p>
         </section>
@@ -30,7 +30,6 @@
                         <li>Track report status</li>
                         <li>View incident hotspot map</li>
                         <li>Manage personal profile</li>
-                        <li>Upload evidence (photos/videos)</li>
                     </ul>
                 </div>
 
@@ -41,7 +40,6 @@
                         <li>Take action on reports</li>
                         <li>Update report status</li>
                         <li>View analytics dashboard</li>
-                        <li>Manage profile</li>
                     </ul>
                 </div>
 
@@ -49,142 +47,36 @@
                     <h3>Admin Portal</h3>
                     <ul>
                         <li>Manage authority accounts</li>
-                        <li>Add/edit/delete authorities</li>
-                        <li>Delete suspicious reports</li>
-                        <li>View system analytics</li>
                         <li>Monitor all activities</li>
+                        <li>System analytics</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <section class="tech-stack">
-            <h2>Technology Stack</h2>
-            <div class="tech-grid">
-                <div class="tech-item">
-                    <h4>Frontend</h4>
-                    <p>React 18.3.1 + TypeScript</p>
-                    <p>Tailwind CSS v4</p>
-                    <p>React Router v7</p>
-                    <p>Recharts</p>
-                </div>
-                <div class="tech-item">
-                    <h4>Backend</h4>
-                    <p>PostgreSQL Database</p>
-                    <p>RESTful API</p>
-                    <p>JWT Authentication</p>
-                </div>
-                <div class="tech-item">
-                    <h4>Security</h4>
-                    <p>Strong password validation</p>
-                    <p>Role-based access control</p>
-                    <p>IC number validation</p>
-                    <p>Phone number validation</p>
-                </div>
-            </div>
-        </section>
-
         <section class="setup">
-            <h2>Database Setup</h2>
+            <h2>Database & Setup</h2>
             <div class="setup-instructions">
-                <h3>Prerequisites</h3>
-                <ul>
-                    <li>PostgreSQL 12 or higher</li>
-                    <li>Node.js 18 or higher</li>
-                    <li>pnpm package manager</li>
-                </ul>
-
                 <h3>Installation Steps</h3>
                 <ol>
-                    <li>Clone the repository</li>
-                    <li>Install dependencies: <code>pnpm install</code></li>
-                    <li>Create PostgreSQL database: <code>createdb community_watch_db</code></li>
-                    <li>Run schema: <code>psql -d community_watch_db -f database/schema.sql</code></li>
-                    <li>Start development server: <code>pnpm dev</code></li>
+                    <li>Clone repository ke komputer anda.</li>
+                    <li>Pastikan PostgreSQL telah dipasang.</li>
+                    <li>Jalankan perintah: <code>psql -d db_name -f schema.sql</code></li>
+                    <li>Mulakan server dengan: <code>npm start</code></li>
                 </ol>
-
-                <h3>Default Login Credentials</h3>
-                <div class="credentials">
-                    <div class="credential-card">
-                        <h4>Citizen Account</h4>
-                        <p>Email: jane@example.com</p>
-                        <p>Password: Password123!</p>
-                    </div>
-                    <div class="credential-card">
-                        <h4>Authority (Ajk Kampung)</h4>
-                        <p>Email: ahmad@authority.gov</p>
-                        <p>Password: Admin123!</p>
-                    </div>
-                    <div class="credential-card">
-                        <h4>Admin Account</h4>
-                        <p>Email: admin@authority.gov</p>
-                        <p>Password: Admin123!</p>
-                    </div>
-                </div>
             </div>
-        </section>
-
-        <section class="database">
-            <h2>Database Schema</h2>
-            <p>The system uses 7 main database tables:</p>
-            <ul>
-                <li><strong>CITIZEN</strong> - Stores community member information</li>
-                <li><strong>STAFF</strong> - Stores authority and admin accounts</li>
-                <li><strong>INCIDENT_TYPE</strong> - Predefined incident categories</li>
-                <li><strong>REPORT</strong> - Crime and incident reports</li>
-                <li><strong>REPORT_MEDIA</strong> - Media evidence (photos/videos)</li>
-                <li><strong>AUTHORITY_ACTION</strong> - Actions taken by authorities</li>
-                <li><strong>REPORT_RESOLUTION</strong> - Final resolution status</li>
-            </ul>
-            <p>See <code>schema.sql</code> for complete database structure.</p>
-        </section>
-
-        <section class="validation">
-            <h2>Validation Rules</h2>
-            <div class="validation-rules">
-                <h3>Password Requirements</h3>
-                <ul>
-                    <li>Minimum 8 characters</li>
-                    <li>At least one uppercase letter</li>
-                    <li>At least one lowercase letter</li>
-                    <li>At least one number</li>
-                    <li>At least one special character (!@#$%^&*)</li>
-                </ul>
-
-                <h3>IC Number Format</h3>
-                <p>Malaysian IC format: <code>YYMMDD-PB-####</code></p>
-                <p>Example: <code>920101-14-5678</code></p>
-
-                <h3>Phone Number Format</h3>
-                <p>Malaysian mobile format: <code>01XXXXXXXXX</code></p>
-                <p>Example: <code>0123456789</code> (10-11 digits)</p>
-            </div>
-        </section>
-
-        <section class="incident-types">
-            <h2>Incident Types</h2>
-            <ul>
-                <li>Theft - Property theft or burglary</li>
-                <li>Vandalism - Property damage or graffiti</li>
-                <li>Suspicious Activity - Unusual or concerning behavior</li>
-                <li>Assault - Physical violence or threat</li>
-                <li>Burglary - Breaking and entering</li>
-                <li>Drug Activity - Suspected drug-related incidents</li>
-                <li>Others - Custom incident type</li>
-            </ul>
         </section>
 
         <section class="contact">
             <h2>Support</h2>
-            <p>For technical support or questions, please contact your local Ajk Kampung.</p>
             <p><strong>Coverage Area:</strong> Taman Tambun Perdana 1, Durian Tunggal, Melaka</p>
+            <p>Contact your local Ajk Kampung for technical support.</p>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Community Watch Crime Reporting System. All rights reserved.</p>
-            <p>Serving Taman Tambun Perdana 1, Durian Tunggal, Melaka</p>
+            <p>&copy; 2026 Community Watch System. All rights reserved.</p>
         </div>
     </footer>
 
